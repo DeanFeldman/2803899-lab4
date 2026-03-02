@@ -41,12 +41,17 @@ async function fetchCountryByName(countryName) {
 }
 
 async function fetchBorderByCode(code) {
-  const response = await fetch(`https://restcountries.com/v3.1/alpha/${encodeURIComponent(code)}`);
+  const response = await fetch(
+    `https://restcountries.com/v3.1/alpha/${encodeURIComponent(code)}`
+  );
+
   if (!response.ok) {
     throw new Error("Could not fetch bordering countries.");
   }
+
   const data = await response.json();
-  return data;
+
+  return data[0];
 }
 
 function renderCountry(country) {
