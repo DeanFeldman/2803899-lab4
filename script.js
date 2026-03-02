@@ -61,7 +61,7 @@ function renderCountry(country) {
     (typeof country?.population === "number")
       ? country.population.toLocaleString()
       : "N/A";
-  const region = country?.region ?? "N/A";
+    const region = country?.region ?? "N/A";
   const flag = country?.flags?.svg || country?.flags?.png || "";
 
   countryInfo.innerHTML = `
